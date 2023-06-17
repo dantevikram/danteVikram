@@ -7,45 +7,59 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=GT+Walsheim:ital@0;1&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roquen:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gravity+Wanders:wght@700&display=swap');
+
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #222;
+      color: #eee;
     }
 
     .card {
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-      margin-top: 20px; /* Added margin-top of 20px */
+      background-color: #333;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     h1 {
       font-size: 36px;
       font-weight: bold;
       text-align: center;
+      color: #eee;
     }
 
     p {
       font-size: 18px;
       text-align: center;
+      color: #eee;
     }
 
-    .image-section {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    img {
-      max-width: 70%;
+    .carousel-item img {
+      width: 100%;
       height: auto;
+      object-fit: contain;
+      object-position: center;
     }
 
-    /* Media query for mobile responsiveness */
+    .description-section {
+      text-align: justify;
+      margin-top: 20px;
+      padding: 0 20px;
+    }
+
+    .description-section p {
+      font-family: 'GT Walsheim', sans-serif;
+      font-style: italic;
+    }
+
     @media (max-width: 576px) {
       .card {
-        margin-top: 10px; /* Reduce margin-top for mobile devices */
+        margin-top: 10px;
       }
     }
   </style>
@@ -56,18 +70,70 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="card">
-          <h1><strong>Vikraman R</strong></h1>
-          <p>iOS Developer</p>
+          <h1 style="font-size: 80px; color: rgb(233, 51, 109); font-family: 'Roquen', sans-serif;"><strong>ᴠɪᴋʀᴀᴍ</strong></h1>
+          <p style="font-size: 20px; color: rgb(233, 51, 109); font-family: 'Gravity Wanders', serif;">Embrace the Night, Chase Wanderlust, Code Unleashed</p>
         </div>
       </div>
     </div>
-    <div class="row image-section">
-      <div class="col-md-8 offset-md-2">
-        <p>👋 Hey there! I'm the Unique Trailblazer, a passionate iOS developer with a knack for creating exceptional mobile experiences. With a dash of quirkiness and a whole lot of expertise, I bring a unique perspective to the world of iOS development.</p>
-        <img src="vikram.jpg" alt="My Image">
+    <div class="row">
+      <div class="col-md-8">
+        <div id="imageCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+          <ol class="carousel-indicators">
+            <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#imageCarousel" data-slide-to="1"></li>
+            <li data-target="#imageCarousel" data-slide-to="2"></li>
+            <li data-target="#imageCarousel" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="vikram1.jpg" class="d-block" alt="Image 1" style="padding: 20px;">
+            </div>
+            <div class="carousel-item">
+              <img src="vikram2.jpg" class="d-block" alt="Image 2" style="padding: 20px;">
+            </div>
+            <div class="carousel-item">
+              <img src="vikram3.jpg" class="d-block" alt="Image 3" style="padding: 20px;">
+            </div>
+            <div class="carousel-item">
+              <img src="vikram4.jpg" class="d-block" alt="Image 4" style="padding: 20px;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="description-section">
+          <p>
+            <em>Welcome to my Instagram portfolio! 🌙✨ Join me, _wikieram_, on my nocturnal adventures as a night owl, wanderlust enthusiast, YOLO for life advocate, and crazy coder.</em></p>
+
+          <p><em>As a night owl, I thrive in the moonlit hours, capturing the essence of the night through my lens. From urban cityscapes bathed in neon lights to serene landscapes under a starry sky, I seek out the hidden beauty that emerges when the sun goes down.</em></p>
+
+          <p><em>Wanderlust runs through my veins, driving me to explore new horizons and embrace the thrill of discovery. Join me as I venture off the beaten path, immersing myself in different cultures and capturing the essence of each unique destination.</em></p>
+
+          <p><em>Life is too short to play it safe, which is why I embrace the YOLO mentality. I believe in living life to the fullest, seizing every opportunity, and making unforgettable memories. Through my Instagram, I hope to inspire you to embrace your own YOLO mindset and embark on daring adventures.</em></p>
+
+          <p><em>But that's not all—I'm also a crazy coder, passionate about pushing the boundaries of technology. When I'm not out exploring, I'm diving into lines of code, crafting innovative solutions, and bringing my creative visions to life.</em></p>
+
+        </div>
       </div>
     </div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const screenWidth = window.innerWidth;
+      const imageWidth = screenWidth * 0.7;
+
+      const carouselItems = document.querySelectorAll(".carousel-item");
+      carouselItems.forEach(function (item) {
+        const img = item.querySelector("img");
+        img.style.width = imageWidth + "px";
+        img.style.height = imageWidth + "px";
+      });
+    });
+  </script>
 </body>
 
 </html>
