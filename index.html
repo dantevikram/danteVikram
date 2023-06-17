@@ -1,78 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>iOS Developer Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-        h1 {
-            color: #333;
-        }
+    .card {
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      margin-top: 20px; /* Added margin-top of 20px */
+    }
 
-        p {
-            color: #666;
-        }
-    </style>
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .image-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    img {
+      max-width: 70%;
+      height: auto;
+    }
+
+    /* Media query for mobile responsiveness */
+    @media (max-width: 576px) {
+      .card {
+        margin-top: 10px; /* Reduce margin-top for mobile devices */
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>iOS Developer</h1>
-    </header>
-
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>
-                Vikraman 
-            </p>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>iOS development using Swift</li>
-                <li>Objective-C programming</li>
-                <li>Experience with Xcode and Interface Builder</li>
-                <li>RESTful API integration</li>
-                <li>Git version control</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li>
-                    <h3>Project 1</h3>
-                    <p>[Brief description of your project 1]</p>
-                </li>
-                <li>
-                    <h3>Project 2</h3>
-                    <p>[Brief description of your project 2]</p>
-                </li>
-                <li>
-                    <h3>Project 3</h3>
-                    <p>[Brief description of your project 3]</p>
-                </li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Contact</h2>
-            <p>
-                Email: [Your email address]<br>
-                Phone: [Your phone number]<br>
-                LinkedIn: [Your LinkedIn profile URL]
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Your Name</p>
-    </footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <h1><strong>Vikraman R</strong></h1>
+          <p>iOS Developer</p>
+        </div>
+      </div>
+    </div>
+    <div class="row image-section">
+      <div class="col-md-8 offset-md-2">
+        <p>👋 Hey there! I'm the Unique Trailblazer, a passionate iOS developer with a knack for creating exceptional mobile experiences. With a dash of quirkiness and a whole lot of expertise, I bring a unique perspective to the world of iOS development.</p>
+        <img src="vikram.jpg" alt="My Image">
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
